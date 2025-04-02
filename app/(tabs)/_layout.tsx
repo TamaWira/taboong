@@ -16,9 +16,10 @@ export default function TabsLayout() {
           backgroundColor: Colors[theme].background,
         },
         headerShadowVisible: false,
-        headerTintColor: Colors[theme].highlight,
+        headerTintColor: Colors[theme].background,
         tabBarStyle: {
-          backgroundColor: Colors[theme].background,
+          backgroundColor: Colors[theme].highlight,
+          borderTopWidth: 0,
         },
       }}
     >
@@ -55,7 +56,6 @@ export default function TabsLayout() {
           tabBarIcon: ({ color }) => (
             <Entypo name="squared-plus" size={32} color={color} />
           ),
-          headerShown: false,
         }}
       />
       <Tabs.Screen
