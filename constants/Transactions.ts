@@ -13,7 +13,7 @@ export const Transactions: Transaction[] = [
   },
   {
     id: (Date.now() + 1).toString(),
-    description: "Salary",
+    description: "End of the year salary",
     amount: 5000,
     transaction_date: "2023-01-02",
     category: "salary",

@@ -16,7 +16,11 @@ export default function TransactionList() {
       renderItem={({ item }) => (
         <>
           <TransactionListHeader aggregatedTransaction={item} />
-          <Card>
+          <Card
+            style={{
+              gap: 20,
+            }}
+          >
             {item.data.map((transaction) => (
               <TransactionListRow
                 transaction={transaction}
