@@ -1,5 +1,5 @@
 import React from "react";
-import { FlatList } from "react-native";
+import { FlatList, StyleSheet, useColorScheme, View } from "react-native";
 import Card from "./Card";
 import TransactionListRow from "./TransactionListRow";
 import { Transactions } from "@/constants/Transactions";
@@ -8,6 +8,8 @@ import { aggregateTransactions } from "@/utils/aggregrateTransactions";
 
 export default function TransactionList() {
   const aggregatedTransactions = aggregateTransactions(Transactions);
+  const theme = useColorScheme() ?? "light";
+  const styles = getStyles(theme);
 
   return (
     <FlatList
@@ -21,11 +23,19 @@ export default function TransactionList() {
               gap: 20,
             }}
           >
-            {item.data.map((transaction) => (
-              <TransactionListRow
-                transaction={transaction}
+            {item.data.map((transaction, index) => (
+              <View
+                style={[
+                  styles.item,
+                  index === item.data.length - 1 ? styles.lastItem : null,
+                ]}
                 key={transaction.id}
-              />
+              >
+                <TransactionListRow
+                  transaction={transaction}
+                  key={transaction.id}
+                />
+              </View>
             ))}
           </Card>
         </>
@@ -34,3 +44,17 @@ export default function TransactionList() {
     />
   );
 }
+
+const getStyles = (theme: "dark" | "light") => {
+  return StyleSheet.create({
+    item: {
+      paddingBottom: 20,
+      borderBottomWidth: 1, // Add border between items
+      borderBottomColor: "#ffffff10",
+    },
+    lastItem: {
+      borderBottomWidth: 0, // No border for the last item
+      paddingBottom: 0,
+    },
+  });
+};

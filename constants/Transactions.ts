@@ -75,7 +75,7 @@ export const Transactions: Transaction[] = [
     id: (Date.now() + 7).toString(),
     description: "Interest Income",
     amount: 50,
-    transaction_date: "2023-01-08",
+    transaction_date: "2023-01-10",
     category: "interest income",
     type: "income",
     created_at: new Date().toISOString(),

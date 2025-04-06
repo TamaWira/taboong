@@ -43,7 +43,7 @@ export default function TransactionListRow({ transaction }: Props) {
             </ThemedText>
           </View>
         </View>
-        <ThemedText style={styles.amount}>{transaction.amount}</ThemedText>
+        <ThemedText>{transaction.amount}</ThemedText>
       </View>
     </TouchableHighlight>
   );
@@ -84,10 +84,6 @@ const getStyles = (theme: "dark" | "light") => {
     },
     category: {
       opacity: 0.5,
-    },
-    amount: {
-      fontSize: 18,
-      fontWeight: "bold",
     },
   });
 };

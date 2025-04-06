@@ -16,7 +16,6 @@ export default function TransactionListHeader({
       <ThemedText style={styles.headerText}>
         {aggregatedTransaction.date}
       </ThemedText>
-      <ThemedView style={styles.headerSeparator} />
       <ThemedText style={styles.headerText}>
         ${aggregatedTransaction.totalAmount}
       </ThemedText>
@@ -32,14 +31,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
     marginVertical: 10,
   },
-  headerSeparator: {
-    borderBottomWidth: 1,
-    borderBottomColor: "#00000050",
-    height: "100%",
-    flex: 1,
-  },
   headerText: {
-    fontSize: 15,
+    fontSize: 18,
     fontWeight: "bold",
   },
 });
